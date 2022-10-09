@@ -159,17 +159,17 @@ const LivePage: FC = () => {
           </div>
         </div>
       </div>
+      <div className="mt-64">
+        <iframe
+          src="https://lvpr.tv?v=8f9arlimtarch97i"
+          // frameborder="0"
+          // allowfullscreen
+          allow="autoplay; encrypted-media; picture-in-picture"
+          sandbox="allow-scripts"
+        ></iframe>
+      </div>
     </div>
   );
 };
 
-// <div className="invisible">
-//   <iframe
-//     src="https://lvpr.tv?v=8f9arlimtarch97i"
-//     // frameborder="0"
-//     // allowfullscreen
-//     allow="autoplay; encrypted-media; picture-in-picture"
-//     sandbox="allow-scripts"
-//   ></iframe>
-// </div>
 export default LivePage;
