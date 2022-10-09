@@ -1,16 +1,29 @@
+import { ConnectButton } from "@rainbow-me/rainbowkit";
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import { useAccount } from "wagmi";
 import logo from "../assets/logo.svg";
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  const { isConnected } = useAccount();
+
+  // useEffect(() => {
+  //   if (isConnected) {
+  //     router.push("/live");
+  //   }
+  // }, [isConnected, router]);
+
   return (
     <div className="container px-5 pt-5 mx-auto">
       <Head>
         <title>pod3</title>
       </Head>
 
-      <Image alt="pod3 logo" src={logo} />
+      <Image alt="pod3 logo" src={logo} width={75} />
       <p className="font-inter font-semibold text-3xl font-bold mt-6">
         Welcome
       </p>
@@ -27,9 +40,19 @@ const Home: NextPage = () => {
       <p className="mt-16 font-inter text-[#8D8D8D]">
         To enter, sign in with your wallet.
       </p>
-      <button className="hover:brightness-95 mt-4 w-full py-3 bg-[#DDE2F8] text-[#0029FF]">
-        Wallet Connect
-      </button>
+      <div className="flex justify-center mt-4">
+        <ConnectButton />
+      </div>
+      {isConnected && (
+        <button
+          className="hover:brightness-95 mt-4 w-full py-3 bg-[#DDE2F8] text-[#0029FF]"
+          onClick={() => {
+            router.push("/live");
+          }}
+        >
+          listen
+        </button>
+      )}
     </div>
   );
 };
