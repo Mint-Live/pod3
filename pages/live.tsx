@@ -4,6 +4,8 @@ import bell from "../assets/bell.svg";
 import Image from "next/image";
 import { useAccount, useEnsAvatar } from "wagmi";
 import avatar1 from "../assets/avatar1.png";
+import avatar2 from "../assets/avatar2.png";
+import nft from "../assets/nft.gif";
 
 const Bar: FC<{ height: number }> = ({ height }) => {
   return (
@@ -104,14 +106,14 @@ const LivePage: FC = () => {
             MINT PODCAST • S6E1
           </div>
         </div>
-        <h1 className="font-inter font-bold text-[30px] leading-tight mt-4">
+        <h1 className="font-inter font-bold text-black text-[30px] leading-tight mt-4">
           Music NFT Monday: Industry Deep Dive
         </h1>
         <div className="mt-5">
           <p className="font-inter font-medium text-[#8D8D8D]">Adam Levy</p>
           <div className="flex items-center mt-2">
             <Image src={avatar1} />
-            <div className="flex ml-4 scale-y-[-1]">
+            <div className="flex ml-4 scale-y-[-1] gap-x-1">
               {new Array(16).fill(undefined).map((_, index) => (
                 <Bar key={index} height={4 + 12 * Math.random()} />
               ))}
@@ -123,6 +125,36 @@ const LivePage: FC = () => {
                 className="w-1.5 rounded-full transition-all bg-[#276FDB]"
                 style={{ height: `${dynamicHeight}px` }}
               ></div>
+            </div>
+          </div>
+          <p className="mt-4 font-inter font-medium text-[#8D8D8D]">
+            Snoop Dog
+          </p>
+          <div className="flex items-center mt-2">
+            <Image src={avatar2} />
+            <div className="flex ml-4 scale-y-[-1] gap-x-1">
+              {new Array(16).fill(undefined).map((_, index) => (
+                <Bar key={index} height={4 + 12 * Math.random()} />
+              ))}
+              <div
+                className="w-1.5 rounded-full transition-all bg-[#276FDB]"
+                style={{ height: `${dynamicHeight}px` }}
+              ></div>
+              <div
+                className="w-1.5 rounded-full transition-all bg-[#276FDB]"
+                style={{ height: `${dynamicHeight}px` }}
+              ></div>
+            </div>
+          </div>
+          <div className="mt-8 bg-white p-2 drop-shadow-lg flex">
+            <Image src={nft} width={84} height={84} />
+            <div className="flex flex-col ml-1">
+              <div className="font-inter font-semibold text-[#8D8D8D] text-[14px]">
+                Level 1
+              </div>
+              <div className="font-inter font-medium font-[18px] text-black">
+                Stay to earn the 15 minute mark NFT.
+              </div>
             </div>
           </div>
         </div>

@@ -11,14 +11,8 @@ const Home: NextPage = () => {
   const router = useRouter();
   const { isConnected } = useAccount();
 
-  // useEffect(() => {
-  //   if (isConnected) {
-  //     router.push("/live");
-  //   }
-  // }, [isConnected, router]);
-
   return (
-    <div className="container px-5 pt-5 mx-auto">
+    <div className="container px-5 pt-5 mx-auto bg-white min-h-[100vh]">
       <Head>
         <title>pod3</title>
       </Head>
